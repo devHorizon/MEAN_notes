@@ -1,0 +1,40 @@
+<button routerLink="/create">Create Snippet</button>
+
+<br>
+<br>
+
+<table>
+  <thead>
+    <th *ngFor="let column of columns">
+      {{ column }}
+    </th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let snippet of snippets">
+      <td>
+        {{ snippet.title }}
+      </td>
+      <td>
+        {{ snippet.responsible }}
+      </td>
+      <td>
+        {{ snippet.description }}
+      </td>
+      <td>
+        {{ snippet.severity }}
+      </td>
+      <td>
+        {{ snippet.status }}
+      </td>
+      <td>
+        <button (click)="editSnippet(snippet._id)">
+          Edit Snippet
+        </button>
+        <button (click)="deleteSnippet(snippet._id)">
+          Delete Snippet
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
